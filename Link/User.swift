@@ -7,10 +7,15 @@
 //
 
 import Foundation
+import Realm
 
-public class User: NSObject {
+public class User: RLMObject {
     /// Unique identifier
     public dynamic var id: String = ""
     /// Publicly displayed username
     public dynamic var username: String = ""
+    
+    override public class func primaryKey() -> String {
+        return "id"
+    }
 }

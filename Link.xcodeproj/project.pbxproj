@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F5674C61AE55DA200B88543 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F5674C51AE55DA200B88543 /* Realm.framework */; };
 		6FE43C441AE5501400DA0981 /* Link.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FE43C431AE5501400DA0981 /* Link.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6FE43C4A1AE5501400DA0981 /* Link.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FE43C3E1AE5501400DA0981 /* Link.framework */; };
 		6FE43C511AE5501400DA0981 /* LinkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE43C501AE5501400DA0981 /* LinkTests.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6F5674C51AE55DA200B88543 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = ../Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		6FE43C3E1AE5501400DA0981 /* Link.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Link.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FE43C421AE5501400DA0981 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6FE43C431AE5501400DA0981 /* Link.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Link.h; sourceTree = "<group>"; };
@@ -38,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F5674C61AE55DA200B88543 /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +55,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F5674C71AE55DA600B88543 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6F5674C51AE55DA200B88543 /* Realm.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6FE43C341AE5501400DA0981 = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +86,7 @@
 			children = (
 				6FE43C5A1AE550C800DA0981 /* Models */,
 				6FE43C431AE5501400DA0981 /* Link.h */,
+				6F5674C71AE55DA600B88543 /* Frameworks */,
 				6FE43C411AE5501400DA0981 /* Supporting Files */,
 			);
 			path = Link;
@@ -135,6 +147,7 @@
 				6FE43C3A1AE5501400DA0981 /* Frameworks */,
 				6FE43C3B1AE5501400DA0981 /* Headers */,
 				6FE43C3C1AE5501400DA0981 /* Resources */,
+				6F5674C81AE55DAC00B88543 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -214,6 +227,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6F5674C81AE55DAC00B88543 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6FE43C391AE5501400DA0981 /* Sources */ = {
@@ -340,6 +370,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Link/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
@@ -358,6 +392,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Link/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
